@@ -9,7 +9,6 @@ interface IForm{
   isShow:boolean;
   style?: object;
   handleError: () => void;
-  onToggleForm: (e:FormEvent)=> void;
 }
 export const Form = memo((props: IForm) => {
   const {
@@ -19,7 +18,6 @@ export const Form = memo((props: IForm) => {
     isAbsolute,
     onSubmit,
     handleError,
-    onToggleForm,
     style
   } = props;
   if(errorMessage && isShow){
@@ -30,7 +28,7 @@ export const Form = memo((props: IForm) => {
   return (
     <>
       <form 
-        className={`${cls.form} ${isShow? cls.form_show : ""} ${isAbsolute ? cls.form_absolute : ''}`} 
+        className={`${cls.shForm } ${isShow? cls.shForm_show : ""} ${isAbsolute ? cls.shForm_absolute : ''}`} 
         onSubmit={(e)=>onSubmit(e)} 
         noValidate
         style={style? style: {}}
@@ -39,7 +37,6 @@ export const Form = memo((props: IForm) => {
           childern
         }
       </form>
-      <div className={`${cls.overlay} ${isShow && isAbsolute ? cls.overlay_show : ''}`} onClick={onToggleForm}></div>
       {
         errorMessage && isShow? <p className={cls.errorMessage}>{errorMessage}</p> : ""
       }

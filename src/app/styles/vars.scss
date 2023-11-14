@@ -85,7 +85,7 @@ $overlay: rgba(0, 0, 0, 0.5);
 html[data-theme="dark"] {
   --color-text: #{$white};
   --color-background: #{$black};
-  --secondary-color: #{$secondary};
+  --secondary: #{$secondary};
   --primary: #{$primary};
   --yallow: #{$Yellow};
   --skeleton: #{$skeleton-shadow};
@@ -105,7 +105,7 @@ html[data-theme="dark"] {
 html[data-theme="light"] {
   --color-text: #{$black};
   --color-background: #{$add-white};
-  --secondary-color: #{$light-grey};
+  --secondary: #{$light-grey};
   --primary: #{$primary};
   --yallow: #{$Yellow};
   --skeleton: #{$skeleton-shadow};

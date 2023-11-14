@@ -85,12 +85,12 @@ export const Input = memo((props: InputProps) => {
             {showPassword ? <AiFillEyeInvisible className={cls.icon_item} /> : <AiFillEye className={cls.icon_item}/>}
           </div>
         )}
-        {errorMessage && (
-          <span className={cls.error}>
-            {errorMessage}
-          </span>
-        )}
       </div>
+      {errorMessage && (
+        <span className={cls.error}>
+          {errorMessage}
+        </span>
+      )}
       {!!label && (
         <label htmlFor={`${name}inputUI`}>
           <span className={cls.Label}>

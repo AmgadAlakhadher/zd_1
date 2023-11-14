@@ -4,24 +4,24 @@ import {  FormEvent, useCallback } from 'react'
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch'
 import { Input } from '@/shared/ui/Input';
 import { 
-     getIsLoading,
-     getIsAuth,
+    //  getIsLoading,
+    //  getIsAuth,
      getEmail,
      getPassword,
-     getUserType,
      sessionActions,
      loginReq,
-     getError
+    //  getError
 } from '@/entities/Session';
+import { Form } from '@/shared/ui/Form';
+import Button from '@/shared/ui/Button';
 
 export const Login = () => {
     
   const dispatch = useAppDispatch();
-  const isLoading = useAppSelector(getIsLoading);
-  const error = useAppSelector(getError);
-  const isLoggedIn = useAppSelector(getIsAuth);
+  // const isLoading = useAppSelector(getIsLoading);
+  // const error = useAppSelector(getError);
+  // const isLoggedIn = useAppSelector(getIsAuth);
   const password = useAppSelector(getPassword);
-  const userType = useAppSelector(getUserType);
   const email = useAppSelector(getEmail);
   
   const onChangeEmail = useCallback((value: string) => {
@@ -43,29 +43,42 @@ export const Login = () => {
 
 
   return (
-    <div className={cls.container}>
-      <h1 className={cls.title}>Login</h1>
-      <form className={cls.formContainer} onSubmit={onSubmit}>
-        <Input
-          type="email"
-          name="email"
-          placeholder="email"
-          value={email}
-          onChange={onChangeEmail}
-        //   className={cls.input}
+    <section className={cls.form}>
+      
+        <Form
+          handleError={resetError} 
+          onSubmit={onSubmit}
+          isShow={true}
+          childern={
+            <>
+              <h1 className={cls.form__content_title}>Login</h1>
+              <Input
+                type="email"
+                name="email"
+                placeholder="email"
+                value={email}
+                onChange={onChangeEmail}
+              //   className={cls.input}
+              />
+              <Input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={password}
+                errorMessage='error'
+                onChange={onChangePass}
+              //   className={cls.input}
+              />
+              <Button content='login' theme='primary' fullWidth onSubmit={onSubmit}/> 
+            </>
+          }
+          style={
+            {
+              minWidth: "50%",
+              height: "40vh"
+            }
+          }
         />
-        <Input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={onChangePass}
-        //   className={cls.input}
-        />
-        <button type="submit" className={cls.button}>
-          Login
-        </button>
-      </form>
-    </div>
+    </section>
   );
 };

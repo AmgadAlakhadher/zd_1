@@ -1,42 +1,50 @@
 .btn {
-    font-size: .6rem;
+    font-size: 1.8rem;
+    font-weight: bold;
     text-transform: capitalize;
     border: none;
     border-radius: 3px;
-    padding: 12px 22px;
+    padding: 6px 22px;
     margin: auto 5px;
     cursor: pointer;
-    transition: color .5s, background .5s ease-out;
+    transition: color .5s, background .5s ease-out,opacity .5s;
     outline: none;
     position: relative;
 }
 
 .primary{
-    background: #c8ab08;
+    background: var(--light-red);
     color: #fff;
+    &:hover{
+        opacity: .7;
+    }
 }
-.primary:hover{
-    background: #aa9106;
+html[data-theme="dark"] .primary{
+    background: var(--primary);
+
 }
 .fullwidth{
     display: block;
     margin: 5px 0;
     width: 100%;
 }
-.secondary{background: #111;color: #eee;}
-.secondary:hover{background: #333;color: #fff;}
+.secondary{
+    background: #111;
+    color: #eee;
+    &:hover{background: #333;color: #fff;}
+}
 .dangers{
     background: rgb(255, 53, 53);
     color: #fff;
+    &:hover{background: rgb(172, 57, 57);}
 }
-.dangers:hover{background: rgb(172, 57, 57);}
 .blue{
     background: rgb(53, 157, 255);
     color: #fff;
+    &:hover{background: rgb(24, 129, 227);}
 }
-.blue:hover{background: rgb(24, 129, 227);}
 .green{
     background: rgb(109, 194, 4);
     color: #fff;
+    &:hover{background: rgb(111, 255, 28);}
 }
-.green:hover{background: rgb(111, 255, 28);}
