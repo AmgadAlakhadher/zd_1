@@ -1,0 +1,12 @@
+.footer{
+    padding: 40px 20px;
+    border-top: solid 1px #666;
+}
+.footer__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__content_logo{
+    font-size: 1.5rem;
+}

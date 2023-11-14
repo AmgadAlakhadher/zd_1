@@ -1,0 +1,1 @@
+export { LoginPageasync as LoginPage } from './ui/LoginPage.async'

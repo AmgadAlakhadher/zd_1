@@ -1,0 +1,44 @@
+@import './styles/index.scss';
+@import './styles/utils.scss';
+//general styles
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  overflow-x: hidden;
+  width: 100%;
+}
+body{
+  width: 100% !important;
+  font-size: 15px;
+  font-family: 'Agdasima', sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none; 
+}
+//common style
+.myContainer{
+  width: 93%;
+  margin: 0 auto;
+
+}
+.pointer{
+  cursor: pointer;
+}
+.capitalize{
+  text-transform: capitalize;
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: rgba($color: #000000, $alpha: 0.7);
+}
