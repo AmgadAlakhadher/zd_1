@@ -42,9 +42,10 @@ api.interceptors.response.use(
           return Promise.reject(_error);
         }
       }
-    } else if(err.message === "Network Error" && !err.response){
-      alert('no internet');
-    }
+    } 
+    // else if(err.message === "Network Error" && !err.response){
+    //   alert('no internet');
+    // }
   }
 );
 

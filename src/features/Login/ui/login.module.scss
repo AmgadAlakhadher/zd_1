@@ -8,5 +8,10 @@
   .form__content_title {
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
   }
-
+  .form__content_captcha{
+    width: 100%;
+    padding: 5px;
+  }

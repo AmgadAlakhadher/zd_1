@@ -31,6 +31,11 @@ const baseQueryWithReauth: BaseQueryFn<
 
 export const rtkApi = createApi({
   baseQuery: baseQueryWithReauth,
-  endpoints: builder => ({}),
+  endpoints: builder => ({
+    getPosts: builder.query({
+      query: () => '/any',
+      transformResponse: (response: any) => response.data,
+    }),
+  }),
   reducerPath: 'rtkApi',
 });

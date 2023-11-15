@@ -27,6 +27,9 @@ export const sessionSlice = createSlice({
             state.error = undefined;
             state.password = payload.trim();
         },
+        setError: (state,{payload}:PayloadAction<string>) => {
+            state.error = payload;
+        },
         resetError: (state) => {
             state.error = undefined;
         },

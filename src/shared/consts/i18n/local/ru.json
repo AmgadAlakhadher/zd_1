@@ -4,7 +4,15 @@
     "languages": "языки",
     "english": "english",
     "russian": "русский",
+    "//": "/////////////////////////////////////login section/////////////////////////////////////",
+    "form_title": "авторизация",
+    "form_email_lb": "Эл. почта",
+    "form_email_pl": "example@gmail.com",
+    "form_password_lb": "Пароль",
+    "form_password_pl": "Пароль",
     "message_change_language": "язык изменился",
+    "form_captcha":"Пожалуйста, установите галочку reCAPTCHA!",
+    "form_btn": "Войти",
     "//": "/////////////////////////////////////footer section/////////////////////////////////////",
     "copyright": "Все права защищены."
 }

@@ -8,9 +8,13 @@
     border-radius: 5px;
     box-shadow: 0 0 5px var(--color-text);
 }
-html[data-theme="dark"] .shForm{
-    background: var(--secondary)
-}
+
 .shForm input{
     margin-top: 5px;
+}
+@media (max-width: 769px){
+    .shForm{
+        width: 90%;
+        padding: 30px 10px;
+    }
 }

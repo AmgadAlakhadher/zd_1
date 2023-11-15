@@ -5,6 +5,14 @@
     "english": "english",
     "russian": "русский",
     "message_change_language": "language changed",
+    "//": "/////////////////////////////////////login section/////////////////////////////////////",
+    "form_title": "login",
+    "form_email_lb": "email",
+    "form_email_pl": "example@gmail.com",
+    "form_password_lb": "password",
+    "form_password_pl": "password",
+    "form_captcha":"Please check the reCAPTCHA box!",
+    "form_btn": "login",
     "//": "/////////////////////////////////////footer section/////////////////////////////////////",
     "copyright": "all rights reserved."
 }
