@@ -7,7 +7,7 @@ import { LoaderPage } from '@/widgets/LoaderPage';
 import { ErrorPage } from '@/pages/errorPage';
 import { ErrorBoundary } from 'react-error-boundary';
 
-const AppRouter = () => {
+export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
     const element = (
       <ErrorBoundary fallback={<ErrorPage />}>
@@ -26,6 +26,5 @@ const AppRouter = () => {
   }, []);
 
   return <Routes>{Object.values(routesConfig).map(renderWithWrapper)}</Routes>;
-};
+});
 
-export default memo(AppRouter);

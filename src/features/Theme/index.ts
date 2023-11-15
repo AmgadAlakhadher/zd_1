@@ -1,2 +1,1 @@
-import ThemeIcon from './ui/ThemeIcon';
-export {ThemeIcon};
+export {ThemeIcon} from './ui/ThemeIcon';

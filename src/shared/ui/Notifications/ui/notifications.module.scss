@@ -1,0 +1,65 @@
+.notifications{
+    position: absolute;
+    width: 250px;
+    min-height: 40px;
+    line-height: 20px;
+    overflow-y: auto;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2),  -1px -7px 14px -5px rgba(0,0,0,0.2);;
+    z-index: 5;
+}
+.notifications_leftBottom{
+    bottom: 20px;
+    left: 20px;
+}
+.notifications_leftTop{
+    top: 20px;
+    left: 20px;
+}
+.notifications_rightTop{
+    top: 20px;
+    right: 20px;
+}
+.notifications_rightBottom{
+    bottom: 20px;
+    right: 20px;
+}
+.notifications_success{
+    border-left-color:var(--primary);
+    background: var(--background-color);
+} 
+.notifications_warning{
+    border-left-color:var(--yellow);
+    background: var(--background-color);
+} 
+.notifications_info{
+    border-left-color:var(--blue);
+    background: var(--background-color);
+} 
+.notifications_failed{
+    border-left-color:var(--red);
+    background: var(--background-color);
+} 
+.notifications__content{
+    position: relative;;
+    padding: 0 5px;
+}
+.notifications__content_msg{
+    padding: 30px 5px 5px 5px;
+}
+.notifications__content_icon{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 1.5rem;
+}
+.notifications__content_close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}

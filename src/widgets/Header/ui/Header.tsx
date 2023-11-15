@@ -9,7 +9,7 @@ import { Dropdown, Button, Space, message } from 'antd';
 import {useTranslation} from 'react-i18next';
 import type { MenuProps } from 'antd';
 
-const Header = () => {
+export const Header = memo(() => {
   const navRef = useRef<HTMLElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const [t,i18n] = useTranslation();
@@ -74,6 +74,5 @@ const Header = () => {
     </header>
 
   )
-}
+})
 
-export default memo(Header)

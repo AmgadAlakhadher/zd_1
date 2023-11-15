@@ -1,6 +1,6 @@
 import { ActionReducerMapBuilder, createAsyncThunk } from '@reduxjs/toolkit';
-import { SessionSchema, User } from '../types/sessionTypes';
-import { ThunkConfig } from 'app/providers/StorProvider';
+import { SessionSchema } from '../types/sessionTypes';
+import { ThunkConfig } from '@/app/providers/StorProvider';
 import { getEmail, getPassword } from '../selectors/getState';
 
 export const loginReq = createAsyncThunk<
@@ -9,10 +9,10 @@ export const loginReq = createAsyncThunk<
   ThunkConfig<string>
 >(
   'user/login',
-  async (_, { extra, rejectWithValue, getState, dispatch }) => {
+  async (_, { extra, rejectWithValue, getState }) => {
     const email = getEmail(getState())?.trim();
     const password = getPassword(getState())?.trim();
-    let regEmail = RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    const regEmail = RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
     if(!password || !email) return rejectWithValue('Необходимо заполнить все поля!');
     if(!regEmail.test(email)) return rejectWithValue("неправильный адрес электронной почты, пример: example@gmail.com");
@@ -34,20 +34,18 @@ export const casesLoginReq = (builder:ActionReducerMapBuilder<SessionSchema>) =>
       state.isAuth = false;
   });
   builder.addCase(loginReq.fulfilled, (state, {payload}) => {
-      localStorage.setItem('userType', payload.role.toString());
-      localStorage.setItem("accessToken",payload.accessToken.toString());
-      localStorage.setItem("refreshToken",payload.refreshToken.toString());
-      state.accessToken = payload.accessToken;
-      state.refreshToken = payload.refreshToken;
-      state.userType = payload.role;
-      state.isAuth = true;
-      localStorage.setItem('isAuth', state.isAuth.toString());
-      state.isLoading = false;
+    state.accessToken = payload.accessToken;
+    state.refreshToken = payload.refreshToken;
+    state.isAuth = true;
+    state.isLoading = false;
+    localStorage.setItem("accessToken",payload.accessToken.toString());
+    localStorage.setItem("refreshToken",payload.refreshToken.toString());
+    localStorage.setItem('isAuth', "true");
   });
       builder.addCase(loginReq.rejected, (state,{payload}) => {
       state.isLoading = false;
       state.isAuth = false;
-      localStorage.setItem('isAuth', state.isAuth.toString());
       state.error = payload;
+      localStorage.setItem('isAuth', state.isAuth.toString());
   });
 }

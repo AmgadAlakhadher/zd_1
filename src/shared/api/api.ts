@@ -2,8 +2,7 @@ import axios from 'axios';
 import { getAuthorizationHeader, getAuthorizationRefreshHeader } from '@/entities/Session';
 
 const api = axios.create({
-  // baseURL: `${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_PORT}`,
-  baseURL: 'http://localhost:8080/',
+  baseURL: `${import.meta.env.VITE_BASE_URL}${import.meta.env.VITE_PORT}`,
   headers: {
     Accept: 'application/json, text/plain, */*',
     'Content-Type': 'application/json',
@@ -23,7 +22,7 @@ api.interceptors.response.use(
       if (err.response.status === 401 && originalConfig.url !== "/auth/refresh") {
         try {
           const rs = await axios.post(
-            `${process.env.REACT_APP_BASE_URL}:${process.env.REACT_APP_PORT}/auth/refresh`,
+            `${import.meta.env.VITE_BASE_URL}:${import.meta.env.VITE_PORT}/auth/refresh`,
             {},
             {
               headers: {
@@ -43,10 +42,9 @@ api.interceptors.response.use(
           return Promise.reject(_error);
         }
       }
-    } 
-    // else if(err.message === "Network Error" && !err.response){
-      
-    // }
+    } else if(err.message === "Network Error" && !err.response){
+      alert('no internet');
+    }
   }
 );
 

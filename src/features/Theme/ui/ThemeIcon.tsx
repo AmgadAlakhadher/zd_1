@@ -4,7 +4,7 @@ import { memo, useCallback, useEffect, useRef } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch';
 import { darkModeActions } from '@/entities/DarkMode';
 
-const ThemeIcon = () => {
+export const ThemeIcon = memo(() => {
   const dispatch = useAppDispatch();
   const darkCircle = useRef<HTMLDivElement>(null);
   const lightCircle = useRef<HTMLDivElement>(null);
@@ -60,6 +60,4 @@ const ThemeIcon = () => {
   
     </>
   )
-}
-
-export default memo(ThemeIcon);
+})

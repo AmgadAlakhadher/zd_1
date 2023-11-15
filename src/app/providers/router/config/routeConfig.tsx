@@ -1,6 +1,5 @@
 import {ErrorPage} from '@/pages/errorPage/';
 import { LoginPage } from '@/pages/loginPage';
-
 import { 
   AppRoutes, 
   getRouteMain,

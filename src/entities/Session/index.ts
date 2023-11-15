@@ -5,7 +5,6 @@ export {
     getIsAuth, 
     getEmail, 
     getPassword,
-    getUserType,
     getIsLoading,
     getError,
 } from './model/selectors/getState';

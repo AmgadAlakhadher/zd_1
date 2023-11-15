@@ -2,11 +2,9 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 import { SessionSchema} from "../types/sessionTypes";
 import { casesLoginReq } from "../services/loginReq";
 
-
 const initialState:SessionSchema = {
     isLoading: false,
     isAuth: false,
-    userType: "0",
     accessToken: "",
     refreshToken: ""
 }
@@ -33,7 +31,6 @@ export const sessionSlice = createSlice({
             state.error = undefined;
         },
         logout: (state)=>{
-            // state.user = undefined;
             state.isAuth = false;
             state.email = undefined;
             state.password = undefined;

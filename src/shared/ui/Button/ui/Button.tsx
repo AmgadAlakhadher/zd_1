@@ -13,7 +13,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     style?: object;
     onClick?: (value?:unknown)=>void;
 }
-const Button = (props:ButtonProps) => {
+export const Button = memo((props:ButtonProps) => {
   const { 
     theme,
     isLoading,
@@ -31,6 +31,4 @@ const Button = (props:ButtonProps) => {
       {isLoading ? <Loader /> : content}
     </button>
   )
-}
-
-export default memo(Button)
+})

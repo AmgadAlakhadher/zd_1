@@ -1,9 +1,10 @@
 import React from 'react'
 import cls from './errorPage.module.scss';
+import { Header } from '@/widgets/Header';
 export const ErrorPage: React.FC = () => {
   return (
     <>
-      {/* <Header btnGoBack={true} />  */}
+      <Header /> 
       <div className={cls.main}>
         <div className={cls.fof}>
               <h1>Error 404</h1>

@@ -13,7 +13,3 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
 export function addQueryParams(params: OptionalRecord<string, string>) {
   window.history.pushState(null, "", getQueryParams(params));
 }
-
-// addQueryParams({
-//     sort, order, search, type,
-// });

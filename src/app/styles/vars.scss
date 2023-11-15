@@ -87,7 +87,7 @@ html[data-theme="dark"] {
   --color-background: #{$black};
   --secondary: #{$secondary};
   --primary: #{$primary};
-  --yallow: #{$Yellow};
+  --yellow: #{$Yellow};
   --skeleton: #{$skeleton-shadow};
   --black: #{$black};
   --white: #{$white};
@@ -99,7 +99,7 @@ html[data-theme="dark"] {
   --dark-black: #{$dark-black};
   --red: #{$red};
   --light-red: #{$light-red};
-
+  --blue: #{$blue};
 }
 
 html[data-theme="light"] {
@@ -107,7 +107,7 @@ html[data-theme="light"] {
   --color-background: #{$add-white};
   --secondary: #{$light-grey};
   --primary: #{$primary};
-  --yallow: #{$Yellow};
+  --yellow: #{$Yellow};
   --skeleton: #{$skeleton-shadow};
   --black: #{$black};
   --white: #{$white};
@@ -119,20 +119,5 @@ html[data-theme="light"] {
   --dark-black: #{$dark-black};
   --red: #{$red};
   --light-red: #{$light-red};
-
-}
-
-
-// .dark {
-//   --background-color: #2B2C37;
-//   --background-color-2: #20212C;
-//   --text-color: #fff;
-//   transition: background-color 0.3s ease-in-out 0.4s, color 0.7s ease-in-out;
-// }
-
-// .light {
-//   --background-color: #FFFFFF;
-//   --background-color-2: #F4F7FD;
-//   --text-color: #000000;
-//   transition: background-color 0.3s ease-in-out 0.4s, color 0.7s ease-in-out;
-// }
+  --blue: #{$blue};
+} 

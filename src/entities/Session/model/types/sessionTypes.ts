@@ -10,7 +10,6 @@ export interface User {
     token: string;
 }
 export interface SessionSchema{
-    userType: string;
     isLoading: boolean;
     isAuth: boolean;
     error?: string ;

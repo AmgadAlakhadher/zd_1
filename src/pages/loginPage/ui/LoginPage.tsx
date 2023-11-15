@@ -1,12 +1,14 @@
 import {Login} from '@/features/Login';
+import { Footer } from '@/widgets/Footer';
 import { Header } from '@/widgets/Header';
 
 const LoginPage = () => {
   return (
-    <div>
+    <>
       <Header />
       <Login />
-    </div>
+      <Footer />
+    </>
   );
 };
 export default LoginPage
