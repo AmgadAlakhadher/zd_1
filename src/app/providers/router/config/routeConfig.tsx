@@ -1,4 +1,4 @@
-import {ErrorPage} from '@/pages/errorPage/';
+// import {ErrorPage} from '@/pages/errorPage/';
 import { LoginPage } from '@/pages/loginPage';
 import { 
   AppRoutes, 
@@ -14,7 +14,7 @@ export const routesConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   // last
   [AppRoutes.NOTFOUND]: {
-    element: <ErrorPage />,
+    element: <LoginPage />,
     path: '*',
   },
 };

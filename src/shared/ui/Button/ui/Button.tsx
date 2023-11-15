@@ -1,11 +1,11 @@
 import { ButtonHTMLAttributes, memo } from 'react'
 import { Loader } from '@/shared/ui/Loader'
-import './Button.scss'
-export type ButtonSize = "M" | "L";
+import cls from './button.module.scss'
+// export type ButtonSize = "M" | "L";
 export type ButtonTheme = "primary" | "secondary" | "dangers" | "blue" | "green";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    size?: ButtonSize;
+    // size?: ButtonSize;
     content: string ;
     theme?: ButtonTheme;
     isLoading?: boolean;
@@ -24,8 +24,20 @@ export const Button = memo((props:ButtonProps) => {
   } = props;
   return (
     <button 
-      className={`${theme && theme} ${fullWidth && "fullwidth"} btn`} 
+      className={`
+        ${
+          theme === "primary"? cls.primary :
+            theme === "secondary"? cls.secondary :
+              theme === "dangers"? cls.dangers :
+                theme === "blue"? cls.blue : 
+                  cls.green
+        }
+        ${fullWidth && cls.fullwidth}
+        ${isLoading && cls.btn__notAllowed}  
+        ${cls.btn}
+      `} 
       onClick={onClick}
+      disabled={isLoading}
       style={style? style : {}}
     >
       {isLoading ? <Loader /> : content}

@@ -13,9 +13,20 @@ export const loginReq = createAsyncThunk<
     const email = getEmail(getState())?.trim();
     const password = getPassword(getState())?.trim();
     const regEmail = RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    const regPassword = RegExp('(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}');
+    const errorMsgEmail = localStorage.getItem("i18nextLng") === "ru"?
+      'неправильный адрес электронной почты, пример: example@gmail.com':
+        'incorrect email address, example: example@gmail.com';
+    const errorMsgPwd = localStorage.getItem("i18nextLng") === "ru"?
+      'неверный пароль, пример: BIj0X0e048YleJL':
+        'incorrect password, example: BIj0X0e048YleJL';
+    const fillAll = localStorage.getItem("i18nextLng") === "ru"?
+      'Необходимо заполнить все поля!':
+        'All fields must be filled in!';
 
-    if(!password || !email) return rejectWithValue('Необходимо заполнить все поля!');
-    if(!regEmail.test(email)) return rejectWithValue("неправильный адрес электронной почты, пример: example@gmail.com");
+    if(!password || !email) return rejectWithValue(fillAll);
+    if(!regEmail.test(email)) return rejectWithValue(errorMsgEmail);
+    if(!regPassword.test(password)) return rejectWithValue(errorMsgPwd);
     
     try {
       const response = await extra.api.post<{accessToken: string, refreshToken: string,role: string}>('/auth/local/signin', {
@@ -23,7 +34,10 @@ export const loginReq = createAsyncThunk<
       });
       return response.data;
     } catch (e) {
-      return rejectWithValue('Что-то пошло не так, попробуйте чуть позже!');
+      const errorSomeThingWrong = localStorage.getItem("i18nextLng") === "ru"?
+      'Что-то пошло не так, попробуйте чуть позже!':
+        'Something went wrong, try again later!';
+      return rejectWithValue(errorSomeThingWrong);
     }
   },
 );

@@ -4,13 +4,14 @@ import { RequireAuth } from './RequireAuth';
 import { routesConfig } from '../config/routeConfig';
 import { AppRoutesProps } from '@/shared/types/router';
 import { LoaderPage } from '@/widgets/LoaderPage';
-import { ErrorPage } from '@/pages/errorPage';
+// import { ErrorPage } from '@/pages/errorPage';
+import {LoginPage} from '@/pages/loginPage'
 import { ErrorBoundary } from 'react-error-boundary';
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
     const element = (
-      <ErrorBoundary fallback={<ErrorPage />}>
+      <ErrorBoundary fallback={<LoginPage />}>
         <Suspense fallback={<LoaderPage />}>{route.element}</Suspense>
       </ErrorBoundary>
     );

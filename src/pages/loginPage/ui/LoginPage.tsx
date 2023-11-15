@@ -1,5 +1,5 @@
 import {Login} from '@/features/Login';
-import { Footer } from '@/widgets/Footer';
+// import { Footer } from '@/widgets/Footer';
 import { Header } from '@/widgets/Header';
 
 const LoginPage = () => {
@@ -7,7 +7,7 @@ const LoginPage = () => {
     <>
       <Header />
       <Login />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

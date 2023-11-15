@@ -3,7 +3,7 @@ import {FaBars} from 'react-icons/fa'
 import cls from './header.module.scss';
 import { AiOutlineClose } from 'react-icons/ai'
 import { IoIosArrowDown } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { ThemeIcon } from '@/features/Theme';
 import { Dropdown, Button, Space, message } from 'antd';  
 import {useTranslation} from 'react-i18next';
@@ -40,7 +40,7 @@ export const Header = memo(() => {
   return (
     <header className={cls.header} id='header'>
       <div className={cls.header__container}>
-        <Link to="/" className={cls.header__container__logo}>{t('logo')}</Link>
+        <a href="/" className={cls.header__container__logo}>{t('logo')}</a>
         <nav className={cls.header__container__nav } ref={navRef}>
           <AiOutlineClose className={cls.header__container__close_icon} onClick={barsIcon} />
           <div className={cls.header__container__content__info__mobile}>

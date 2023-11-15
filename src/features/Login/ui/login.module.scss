@@ -1,17 +1,67 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
-  .form__content_title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .form__content_captcha{
-    width: 100%;
-    padding: 5px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 15vh;
+  padding-bottom: 4vh;
+}
+.form__content_title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.form__content_captcha{
+  width: 100%;
+  padding: 5px;
+}
+.form__link_pw{
+  text-align: center;
+  width: 35%;
+  margin: 15px auto;
+  display: block;
+  box-sizing: border-box;
+}
+.form_or{
+  display: block;
+  text-align: center;
+  position: relative;
+}
+.form_or::after,.form_or::before{
+  content: "";
+  display: block;
+  width: 46%;
+  height: 1px;
+  background: #3f3f3f;
+  top: 50%;
+  position: absolute;
+}
+html[data-theme="dark"] .form_or::after,.form_or::before{
+  background: #adadad;
+}
+.form_or::after{
+  right: 0;
+}
+.form_or::before{
+  left: 0;
+}
+.form__link{
+  display: block;
+  color: var(--sec);
+}
+.form__box{
+  text-align: center;
+  margin-top: 15px;
+}
+.form__box__icons{
+  padding-top: 20px;
+}
+.form__box__icons__link_item{
+  font-size: 2rem;
+  margin: 5px 10px;
+}
+.form__box_signup{
+
+}

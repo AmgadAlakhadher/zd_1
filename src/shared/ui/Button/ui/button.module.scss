@@ -11,7 +11,10 @@
     outline: none;
     position: relative;
 }
-
+.btn__notAllowed{
+    cursor: not-allowed;
+    opacity: 1 !important;
+}
 .primary{
     background: var(--light-red);
     color: #fff;
@@ -21,7 +24,6 @@
 }
 html[data-theme="dark"] .primary{
     background: var(--primary);
-
 }
 .fullwidth{
     display: block;

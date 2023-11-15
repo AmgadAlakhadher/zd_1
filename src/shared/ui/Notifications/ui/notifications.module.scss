@@ -12,6 +12,9 @@
     box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.2),  -1px -7px 14px -5px rgba(0,0,0,0.2);;
     z-index: 5;
 }
+html[data-theme="dark"] .notifications{
+    background: #333233;
+}
 .notifications_leftBottom{
     bottom: 20px;
     left: 20px;

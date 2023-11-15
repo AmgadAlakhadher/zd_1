@@ -13,6 +13,10 @@
     "form_password_pl": "password",
     "form_captcha":"Please check the reCAPTCHA box!",
     "form_btn": "login",
+    "form_signup": "sign up",
+    "form_social": "Social media login",
+    "form_havntaccount": "Don’t have an account?",
+    "form_reset_pw": "Forgot password?",
     "//": "/////////////////////////////////////footer section/////////////////////////////////////",
     "copyright": "all rights reserved."
 }

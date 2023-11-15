@@ -1,5 +1,4 @@
 import { useAppSelector } from '@/shared/lib/hooks/useAppSelector/useAppSelector';
-import cls from './login.module.scss';
 import {  FormEvent, useCallback, useEffect, useRef } from 'react'
 import { useAppDispatch } from '@/shared/lib/hooks/AppDispatch/AppDispatch'
 import { Input } from '@/shared/ui/Input';
@@ -7,22 +6,26 @@ import { Form } from '@/shared/ui/Form';
 import { Button } from '@/shared/ui/Button';
 import { Notifications } from '@/shared/ui/Notifications';
 import ReCAPTCHA from "react-google-recaptcha";
-import { 
-     getIsLoading,
-     getIsAuth,
-     getEmail,
-     getPassword,
-     sessionActions,
-     loginReq,
-     getError
-} from '@/entities/Session';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaSquareGitlab   } from "react-icons/fa6";
+import cls from './login.module.scss';
+import { 
+  getIsLoading,
+  getIsAuth,
+  getEmail,
+  getPassword,
+  sessionActions,
+  loginReq,
+  getError
+} from '@/entities/Session';
 // import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const dispatch = useAppDispatch();
   const recaptcha = useRef<ReCAPTCHA>(null);
-  const [t] = useTranslation();
+  const [t, i18n] = useTranslation();
   // const navigate = useNavigate();
   const isLoading = useAppSelector(getIsLoading);
   const error = useAppSelector(getError);
@@ -85,11 +88,33 @@ export const Login = () => {
                 value={password}
                 onChange={onChangePass}
               />
-              <Button content={t("form_btn")} theme='primary' isLoading={isLoading} fullWidth onSubmit={onSubmit}/> 
               <ReCAPTCHA 
-                ref={recaptcha} 
-                sitekey={import.meta.env.VITE_SITE_KEY} 
+                ref={recaptcha}
+                style={{marginTop: "10px"}} 
+                sitekey="6LfadxApAAAAAFXb3GC8VB5HVe7bfFwN4FE0RHEl"
               />
+              <Button content={t("form_btn")} theme='primary' isLoading={isLoading} fullWidth onSubmit={onSubmit}/> 
+              <Link className={cls.form__link_pw} to='#reset_password'>{t("form_reset_pw")}</Link>
+              <span className={cls.form_or}>
+                {i18n.language === "en"? "or" : "или"}
+              </span>
+              <div className={cls.form__box}>
+                <p className={cls.form__box_title}>{t("form_social")}</p>
+                <div className={cls.form__box__icons}>
+                  <Link to="#" className={cls.form__box__icons__link}>
+                    <FaGithub className={cls.form__box__icons__link_item} />
+                  </Link>
+                  <Link to="#" className={cls.form__box__icons__link}>
+                    <FaLinkedin className={cls.form__box__icons__link_item} />
+                  </Link>
+                  <Link to="#" className={cls.form__box__icons__link}>
+                    <FaSquareGitlab className={cls.form__box__icons__link_item} />
+                  </Link>
+                  <p className={cls.form__box_signup}>{t("form_havntaccount")}&nbsp; 
+                    <Link className={cls.form__box_signup_link} to='#signup'>{t("form_signup")}</Link>
+                  </p>
+                </div>
+              </div>
             </>
           }
         />
