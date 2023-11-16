@@ -16,14 +16,11 @@
     opacity: 1 !important;
 }
 .primary{
-    background: var(--light-red);
+    background: var(--primary);
     color: #fff;
     &:hover{
         opacity: .7;
     }
-}
-html[data-theme="dark"] .primary{
-    background: var(--primary);
 }
 .fullwidth{
     display: block;

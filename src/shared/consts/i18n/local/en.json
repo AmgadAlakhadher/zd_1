@@ -4,6 +4,7 @@
     "languages": "languages",
     "english": "english",
     "russian": "русский",
+    "success":"success",
     "message_change_language": "language changed",
     "//": "/////////////////////////////////////login section/////////////////////////////////////",
     "form_title": "login",

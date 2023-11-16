@@ -5,12 +5,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
-  overflow-x: hidden;
-  width: 100%;
-}
 body{
-  width: 100% !important;
+  min-width: 100% !important;
   font-size: 15px;
   font-family: 'Agdasima', sans-serif;
   background: var(--color-background);
@@ -43,4 +39,10 @@ a{
   height: 100vh;
   z-index: 1;
   background: rgba($color: #000000, $alpha: 0.7);
+}
+
+@media (max-width: 769px) {
+  body{
+    font-size: 10px;
+  }
 }

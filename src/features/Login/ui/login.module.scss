@@ -23,6 +23,11 @@
   margin: 15px auto;
   display: block;
   box-sizing: border-box;
+  color: var(--light-blue);
+  transition: color .5s;
+}
+.form__link_pw:hover, .form__box_signup_link:hover{
+  color: var(--blue);
 }
 .form_or{
   display: block;
@@ -56,12 +61,45 @@ html[data-theme="dark"] .form_or::after,.form_or::before{
   margin-top: 15px;
 }
 .form__box__icons{
-  padding-top: 20px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form__box__icons_googleIcon {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.form__box__icons_googleIcon > *{
+  background-color: var(--color-text) !important;
+  border-radius: 30% !important;
+  &:hover{
+    background: rgb(90, 70, 125) !important;
+  }
+}
+html[data-theme="dark"] .form__box__icons_googleIcon:hover > *{
+  background-color: var(--primary) !important;
+}
+.form__box__icons_googleIcon > div {
+  padding: 7.5px !important;
+  line-height: 5px;
+}
+.form__box__icons_googleIcon > span{
+  display: none;
 }
 .form__box__icons__link_item{
   font-size: 2rem;
   margin: 5px 10px;
+  transition: background .5s, transform .5s ease-out;
+  &:hover{
+    transform: scale(1.2);
+    color: rgb(90, 70, 125);
+  }
 }
-.form__box_signup{
-
+html[data-theme="dark"] .form__box__icons__link_item:hover{
+  color: var(--primary);
+}
+.form__box_signup_link{
+  color: var(--light-blue);
 }

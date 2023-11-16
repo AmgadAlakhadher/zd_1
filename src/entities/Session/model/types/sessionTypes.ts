@@ -18,8 +18,3 @@ export interface SessionSchema{
     accessToken: string;
     refreshToken: string;
 }
-
-export interface GetData{
-    id: number | string;
-    name: string;
-}

@@ -70,6 +70,7 @@ $white: #FFFFFF;
 $gradient: radial-gradient(100% 100% at 50.36% 0%, #38B48D 0%, #007752 100%);
 $dark-grey: #666666;
 $blue: #4481DB;
+$light-blue: #67a2fb;
 $grey: #B3B3B3;
 $light-grey: #D7D7D7;
 $add-white: #F9F9FB;
@@ -78,7 +79,7 @@ $primary: #92BD67 ;
 $secondary: #303245;
 $red: #D51E4A;
 $light-red:#FF6087;
-$green: #146626;
+$green: #228b22;
 $skeleton-color: #E5E5E5;
 $skeleton-shadow: rgba(0 0 0 / 20%);
 $overlay: rgba(0, 0, 0, 0.5);
@@ -100,13 +101,14 @@ html[data-theme="dark"] {
   --red: #{$red};
   --light-red: #{$light-red};
   --blue: #{$blue};
+  --light-blue: #{$light-blue};
 }
 
 html[data-theme="light"] {
   --color-text: #{$black};
   --color-background: #{$add-white};
   --secondary: #{$light-grey};
-  --primary: #{$primary};
+  --primary: #{$green};
   --yellow: #{$Yellow};
   --skeleton: #{$skeleton-shadow};
   --black: #{$black};
@@ -120,4 +122,5 @@ html[data-theme="light"] {
   --red: #{$red};
   --light-red: #{$light-red};
   --blue: #{$blue};
+  --light-blue: #{$light-blue};
 } 
